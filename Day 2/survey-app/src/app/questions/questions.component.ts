@@ -1,15 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Question } from '../question.model';
 
 @Component({
-  selector: 'ang-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'ang-questions',
+  templateUrl: './questions.component.html',
+  styleUrls: ['./questions.component.css']
 })
-export class AppComponent {
-  title = 'Angular Training';
-  questions = [{ question: 'Was the Training UseFul?', type: 'mandatory' },
-  { question: 'How Efficient is the training?', type: 'optional' },
-  { question: 'Was the trainer able to cover most concepts?', type: 'mandatory' }];
+export class QuestionsComponent implements OnInit {
+  @Input() questions: Array<Question>;
+  @Output() questionEnd = new EventEmitter();
+  highlighter = 0;
+  loop;
+  constructor() { }
+
+  ngOnInit() {
+    this.loop = setInterval(() => {
+      if (this.highlighter < this.questions.length) {
+        this.highlighter++;
+      } else {
+        this.questionEnd.emit('end of question loop');
+        this.highlighter = 1;
+      }
+
+    }, 1000);
+  }
+
+  stopLoop() {
+    clearInterval(this.loop);
+  }
   displayMessage(question) {
     console.table(this.questions);
     // tslint:disable-next-line:no-console
@@ -34,4 +52,5 @@ export class AppComponent {
     // tslint:disable-next-line:no-console
     // console.trace('trace me');
   }
+
 }
