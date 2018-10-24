@@ -5,7 +5,7 @@
       <h1 class="lead">Welcome To The {{title}} Survey</h1>
     </div>
     <ul class="list-group">
-      <li *ngFor="let question of questions" class="list-group-item">{{question.question}}
+      <li (click)="displayMessage(question.question)" *ngFor="let question of questions" class="list-group-item">{{question.question}}
           <span *ngIf="question.type==='mandatory';else optional" class="badge badge-danger badge-pill">m</span>
           <ng-template #optional><span class="badge badge-success badge-pill">o</span></ng-template>
         </li>
