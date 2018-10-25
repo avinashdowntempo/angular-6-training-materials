@@ -13,11 +13,11 @@ export class AppComponent {
 
   constructor() {
     this.questions = [
-      new Question('Was the Training UseFul Really?', 'mandatory'),
-      new Question('Does the training make you feel sleepy?', 'optional'),
-      { question: 'Was the Training UseFul?', type: 'mandatory' },
-      { question: 'How Efficient is the training?', type: 'optional' },
-      { question: 'Was the trainer able to cover most concepts?', type: 'mandatory' }];
+      new Question('Was the Training UseFul Really?', 'mandatory', 'checkbox'),
+      new Question('Does the training make you feel sleepy?', 'optional', 'checkbox'),
+      { question: 'Was the Training UseFul?', type: 'mandatory', option: 'radiobutton' },
+      { question: 'How Efficient is the training?', type: 'optional', option: 'checkbox' },
+      { question: 'Was the trainer able to cover most concepts?', type: 'mandatory', option: 'text' }];
   }
 
   completeQuestion(message) {

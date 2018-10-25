@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li (click)="displayMessage(question.question)" [class.list-active]="highlighter == i+1" [style.background]="highlighter == i+1 ? '#ffe1c2' : 'none'"
+    *ngFor="let question of questions; index as i;" class="list-group-item">{{question.question}}
+    <span [ngStyle]="{
+      'color': highlighter == i+1 ? 'red' : 'white',
+      'background': highlighter == i+1 ? 'white' : 'red'
+   }"
+      *ngIf="question.type==='mandatory';else optional" class="badge float-right badge-danger badge-pill">m</span>
+    <ng-template #optional><span [ngClass]="{'badge-success': highlighter != i+1,'float-right': highlighter != i+1}"
+        class="badge badge-pill">o</span></ng-template>
+  </li>
+</ul>
