@@ -1,0 +1,13 @@
+<ang-header></ang-header>
+<div class="container">
+  <ang-login></ang-login>
+  <main>
+    <div class="jumbotron">
+      <h1 class="lead">Welcome To The {{title}} Survey</h1>
+      <angRating></angRating>
+    </div>
+    <ang-questions #quescomp (questionEnd)="quescomp.stopLoop()" [questions]="questions"></ang-questions>
+    <!--<ang-questions (questionEnd)="completeQuestion($event)" [questions]="questions"></ang-questions>-->
+  </main>
+</div>
+<ang-footer></ang-footer>
