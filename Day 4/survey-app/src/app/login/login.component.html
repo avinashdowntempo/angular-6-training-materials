@@ -1,0 +1,19 @@
+<form class="form">
+
+  <div class="form-row">
+    <div class="col-6">
+    </div>
+    <div class="col-6 d-flex flex-row-reverse form-inline">
+      <div *ngIf="!username" class="form-group mx-sm-3 mb-2">
+
+        <input type="email" #user class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+        <button type="button" (click)="login(user)" class="btn btn-primary">Login</button>
+      </div>
+      <div *ngIf="username">
+        <p class="lead">you are logged in as {{username}}</p>
+      </div>
+
+
+    </div>
+  </div>
+</form>
