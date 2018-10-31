@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Signup</h2>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <div class="form-group">
+        <label for="usr">User name:</label>
+        <input [angErrorLog]="user" #usr #user="ngModel" [(ngModel)]="signup.username" minlength="10" maxlength="15" required type="text"
+          name="usr" class="form-control" id="usr">
+        <label>{{usr.className}}</label>
+        <!--<div [hidden]="user.valid || user.pristine" class="alert alert-danger">
+          {{user.errors | json}}
+        </div>-->
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input [angErrorLog]="email" #em #email="ngModel" [(ngModel)]="signup.email" type="email" name="email" minlength="5" class="form-control" id="email">
+        <label>{{em.className}}</label>
+      </div>
+      <div class="form-group">
+        <label for="pwd">New Password:</label>
+        <input [angErrorLog]="pass" #pwd #pass="ngModel" [(ngModel)]="signup.newpassword" type="password" name="pwd"
+          class="form-control" required id="pwd">
+        <label>{{pwd.className}}</label>
+      </div>
+      <div [hidden]="!pass.valid" class="form-group">
+        <label for="cnfpwd">Confirm Password:</label>
+        <input [angErrorLog]="subs" #conf="ngModel" #cnf [(ngModel)]="signup.confirmpassword" type="password" name="cnfpwd" class="form-control" required id="cnfpwd">
+        <label>{{cnf.className}}</label>
+      </div>
+      <div class="form-group">
+        <label for="sub">Subscrtion type</label>
+        <select [angErrorLog]="subs" #subs="ngModel" #sub [(ngModel)]="signup.subscription" name="sub" class="form-control" id="sub" required>
+          <option *ngFor="let sub of subscription" [value]="sub">{{sub}}</option>
+        </select>
+        <label>{{sub.className}}</label>
+      </div>
+      <button [disabled]="!signupForm.form.valid" type="submit" class="btn btn-success">Submit</button>
+      <button type="button" (click)="signupForm.reset()" class="btn btn-danger">Reset</button>
+    </form>
+    <label>form value:{{signup | json}}</label>
+    <div><label>form class:{{signupForm.className}}</label></div>
+
+  </div>
+</div>

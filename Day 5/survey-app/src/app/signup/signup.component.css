@@ -1,0 +1,15 @@
+.form-group .ng-touched{
+    box-shadow: 0px 0px 5px orange;
+}
+.form-group .ng-untouched{
+    box-shadow: 0px 0px 5px red;
+}
+.form-group .ng-dirty{
+    box-shadow: 0px 0px 5px green;
+}
+.card{
+    margin-bottom: 200px;
+}
+.ng-pristine{}
+.ng-valid{}
+.ng-invalid{}

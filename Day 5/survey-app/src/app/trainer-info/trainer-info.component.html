@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-4">Trainer Info</h1>
+    <p class="lead">Name: {{info.name | uppercase}}</p>
+    <p class="lead">DOB: {{info.dob | date:"dd-MM-yy"}}</p>
+    <p class="lead">Mobile: {{info.mobile}}</p>
+    <p class="lead">Course Price: {{info.price | currency:"USD"}}</p>
+    <p class="lead">Training: {{info.training | titlecase}}</p>
+    <p class="lead">Overall Rating: {{info.rating | number:'3.5-5' | rating}}</p>
+    <p class="lead">Technologies: {{info.technologies | slice:2:5}}</p>
+    <p class="lead">Address: {{info.address | json}}</p>
+    <p class="lead">Age: {{info.age | maxVal}}</p>
+    <input type="text" #data class="form-control">
+    <button (click)="addVal(data.value)">change my age</button>
+  </div>
+</div>

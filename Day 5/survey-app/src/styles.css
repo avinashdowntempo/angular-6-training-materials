@@ -1,0 +1,12 @@
+.error-msg{
+    font-size: 0.9em;
+    color: white;
+    border-radius: 22px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 3px grey;
+    padding: 2px 10px 2px 10px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: #ff0000a6;
+}
