@@ -12,6 +12,7 @@ import { RepeaterDirective } from './repeater.directive';
 import { TrainerInfoComponent } from './trainer-info/trainer-info.component';
 import { RatingPipe } from './rating.pipe';
 import { MaxValPipe } from './max-val.pipe';
+import { SomeFilterPipe } from './some-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MaxValPipe } from './max-val.pipe';
     TrainerInfoComponent,
     RatingPipe,
     MaxValPipe,
+    SomeFilterPipe,
   ],
   imports: [
     BrowserModule,

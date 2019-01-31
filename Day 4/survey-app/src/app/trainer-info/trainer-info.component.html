@@ -9,8 +9,10 @@
     <p class="lead">Overall Rating: {{info.rating | number:'3.5-5' | rating}}</p>
     <p class="lead">Technologies: {{info.technologies | slice:2:5}}</p>
     <p class="lead">Address: {{info.address | json}}</p>
+    <ul><li *ngFor="let val of info.test|someFilter:'ctl'">{{val|json}}</li></ul>
     <p class="lead">Age: {{info.age | maxVal}}</p>
     <input type="text" #data class="form-control">
     <button (click)="addVal(data.value)">change my age</button>
   </div>
+  
 </div>
